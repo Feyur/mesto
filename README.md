@@ -16,14 +16,13 @@
 * :white_check_mark: Верстка фото с помощью flex.
 * :white_check_mark: Создание popup на с использованием JavaScript.
 
-
-
 ## Планы на ближайшее будущее
 
 * :black_square_button: Доработка ошибок после ревью.
 * :black_square_button: Публикация работы в портфолио.
+* :black_square_button: Доработка проекта, согласно планам обучения ЯндексПрактикума.
 
 
 ## Github Page
 
-Ссылка на проект: https://feyur.github.io/mesto/
+Ссылка на проект: https://feyur.github.io/mesto/index.html
