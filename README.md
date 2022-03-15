@@ -26,4 +26,4 @@
 
 ## Github Page
 
-Ссылка на проект: https://feyur.github.io/russian-travel/index.html
+Ссылка на проект: https://feyur.github.io/mesto/
