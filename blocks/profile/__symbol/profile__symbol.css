@@ -27,5 +27,5 @@
 }
 
 .profile__symbol:hover {
-  border-color: #353535;
+  opacity: 0.6;
 }

@@ -4,5 +4,5 @@
 }
 
 .profile__edit-button:hover {
-  fill: #353535;
+  opacity: 0.6;
 }
