@@ -25,4 +25,4 @@
 
 ## Github Page
 
-Ссылка на проект: https://feyur.github.io/Mesto/index.html
+Ссылка на проект: https://feyur.github.io/mesto/index.html
