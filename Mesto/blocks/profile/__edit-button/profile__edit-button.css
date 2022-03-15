@@ -1,0 +1,8 @@
+.profile__edit-button {
+  width: 24px;
+  margin: auto 0 auto 18px;
+}
+
+.profile__edit-button:hover {
+  fill: #353535;
+}

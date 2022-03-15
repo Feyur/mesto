@@ -242,7 +242,7 @@
   text-align: center;
 }
 
-.save-popup {
+.popup__close {
   background-color: #000;
   color: #ffff;
   width: 358px;
@@ -259,4 +259,13 @@
   border-bottom: 1px solid #000000;
   margin-bottom: 30px;
 
+}
+
+.popup__job {
+  width: 358px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid #000000;
+  margin-bottom: 30px;
 }

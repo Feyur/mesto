@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="pages/index.css">
+  <title>Mesto</title>
+</head>
+
+<body class="body">
+  <div class="page">
+    <section class="header">
+      <img src="images/logo.svg" alt="логотип сервиса Место" class="header__logo">
+    </section>
+    <section class="profile">
+      <div class="profile__left">
+        <img src="images/image.jpg" alt="Фотогарфия Жак-Ив Кусто" class="profile__avatar">
+        <div class="profile__info">
+          <div class="profile__text">
+            <div class="profile__name">
+              <h2 class="profile__title">Жак-Ив Кусто</h2>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="profile__edit-button">
+                <rect x="0.5" y="0.5" width="23" height="23" stroke="white" />
+                <path
+                  d="M17 8.32827L9.60377 15.7666L8.28302 14.4194L15.6604 7L17 8.32827ZM7 17L8.96226 16.4118L7.58491 15.0835L7 17Z"
+                  fill="white" />
+              </svg>
+              <!-- <img src="images/EditButton.svg" alt="" class="profile__edit-button"> -->
+            </div>
+            <h3 class="profile__description">Исследователь океана</h3>
+          </div>
+        </div>
+      </div>
+      <img src="images/plus.svg" alt="" class="profile__symbol">
+    </section>
+    <section class="elements">
+
+      <div class="elements__blocks">
+
+        <div class="elemets__item">
+          <img src="images/karacharevo.png" alt="" class="elements__image">
+          <div class="elements__rectangle">
+            <div class="elements__title-text">
+              <h2 class="elemets__title">Карачаевск</h2>
+              <img src="images/titile-heart.svg" alt="" class="elemetns__title-symbol">
+            </div>
+          </div>
+        </div>
+
+        <div class="elemets__item">
+          <img src="images/Elbrus.png" alt="" class="elements__image">
+          <div class="elements__rectangle">
+            <div class="elements__title-text">
+              <h2 class="elemets__title">Гора Эльбрус</h2>
+              <img src="images/titile-heart.svg" alt="" class="elemetns__title-symbol">
+            </div>
+          </div>
+        </div>
+
+        <div class="elemets__item">
+          <img src="images/dombai.png" alt="" class="elements__image">
+          <div class="elements__rectangle">
+            <div class="elements__title-text">
+              <h2 class="elemets__title">Домбай</h2>
+              <img src="images/titile-heart.svg" alt="" class="elemetns__title-symbol">
+            </div>
+          </div>
+        </div>
+
+        <div class="elemets__item">
+          <img src="images/Elbrus.png" alt="" class="elements__image">
+          <div class="elements__rectangle">
+            <div class="elements__title-text">
+              <h2 class="elemets__title">Гора Эльбрус</h2>
+              <img src="images/titile-heart.svg" alt="" class="elemetns__title-symbol">
+            </div>
+          </div>
+        </div>
+
+        <div class="elemets__item">
+          <img src="images/dombai.png" alt="" class="elements__image">
+          <div class="elements__rectangle">
+            <div class="elements__title-text">
+              <h2 class="elemets__title">Домбай</h2>
+              <img src="images/titile-heart.svg" alt="" class="elemetns__title-symbol">
+            </div>
+          </div>
+        </div>
+
+        <div class="elemets__item">
+          <img src="images/karacharevo.png" alt="" class="elements__image">
+          <div class="elements__rectangle">
+            <div class="elements__title-text">
+              <h2 class="elemets__title">Карачаевск</h2>
+              <img src="images/titile-heart.svg" alt="" class="elemetns__title-symbol">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p class="footer__copyright">&copy; 2022. Юрий Федотов</p>
+    </footer>
+
+    <div class="popup">
+      <div class="popup__container">
+        <h3 class="popup__title">Редактировать профиль</h3>
+        <form action="" class="popup__form">
+          <div class="popup__close-button"></div>
+          <input type="text" class="popup__text">
+          <input type="text" class="popup__job">
+          <input type="submit" class="popup__submit" value="Сохранить">
+        </form>
+      </div>
+    </div>
+
+  </div>
+  <script src="scripts/script.js"></script>
+</body>
+
+</html>

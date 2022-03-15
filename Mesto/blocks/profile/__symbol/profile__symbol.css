@@ -1,0 +1,31 @@
+.profile__symbol {
+  width: 22px;
+  height: 22px;
+  border: solid 1px #ffff;
+  padding: 14px 64px;
+}
+
+@media (max-width: 739px) {
+  .profile__symbol {
+    padding: 14px 250px;
+    margin: 38px auto;
+  }
+}
+
+@media (max-width: 580px) {
+  .profile__symbol {
+    padding: 14px 125px;
+    margin: 38px auto;
+  }
+}
+
+@media (max-width: 275px) {
+  .profile__symbol {
+    padding: 10px 95px;
+    margin: 38px auto;
+  }
+}
+
+.profile__symbol:hover {
+  border-color: #353535;
+}

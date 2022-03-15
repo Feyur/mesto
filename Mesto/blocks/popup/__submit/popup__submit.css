@@ -1,0 +1,19 @@
+.popup__submit {
+  background-color: #000;
+  color: #ffff;
+  width: 358px;
+  height: 50px;
+  margin-top: 18px;
+}
+
+@media (max-width: 512px) {
+  .popup__submit {
+    width: 238px;
+  }
+}
+
+.popup__submit:hover {
+  background: #000000;
+  opacity: 0.8;
+  border-radius: 2px;
+}
