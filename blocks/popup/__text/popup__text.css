@@ -1,17 +1,17 @@
-
 .popup__text {
+  outline: none;
   width: 358px;
-  border-top: none;
-  border-left: none;
-  border-right: none;
+  border: none;
   border-bottom: 1px solid #000000;
   padding-bottom: 13px;
   margin-bottom: 30px;
-
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
 }
 
-@media (max-width: 512px) {
+@media (max-width: 580px) { 
   .popup__text {
-    width: 238px;
+    max-width: 238px;
   }
 }

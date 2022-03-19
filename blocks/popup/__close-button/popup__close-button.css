@@ -1,24 +1,22 @@
-.popup__close-button:before {
+.popup__close-button:before, .popup__close-button:after {
   position: absolute;
   content: '';
-  height: 30px;
+  height: 37.5px;
   border: 2px solid white;
   top: 0;
   right: 0;
+
+}
+
+.popup__close-button:before {
   transform: translateY(-100%) translateX(20px) rotate(45deg);
 }
 
 .popup__close-button:after {
-  position: absolute;
-  content: '';
-  height: 30px;
-  border: 2px solid white;
-  top: 0;
-  right: 0;
   transform: translateY(-100%) translateX(20px) rotate(-45deg);
 }
 
-@media (max-width: 512px) {
+@media (max-width: 580px) {
   .popup__close-button:before {
     transform: translateY(-100%) translateX(-10px) rotate(45deg);
   }
@@ -26,10 +24,10 @@
   .popup__close-button:after {
     transform: translateY(-100%) translateX(-10px) rotate(-45deg);
   }
-
 }
 
 .popup__close-button:hover {
-background: #FFFFFF;
-opacity: 0.6;
+  background: #FFFFFF;
+  opacity: 0.6;
+  cursor: pointer;
 }

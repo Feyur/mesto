@@ -1,5 +1,8 @@
 .elements__title-text {
   display: flex;
+  height: 100%;
   justify-content: space-between;
-  padding: 21px 21px 25px 15px;
+  padding: 0 21px;
+  align-items: center;
+  box-sizing: border-box;
 }

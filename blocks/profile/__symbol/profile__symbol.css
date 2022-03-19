@@ -1,8 +1,12 @@
 .profile__symbol {
   width: 22px;
-  height: 22px;
+  height: 50px;
   border: solid 1px #ffff;
-  padding: 14px 64px;
+  padding: 14px 74px;
+  margin: 35px 0 0 0;
+  background: url(../../../images/plus.svg);
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 @media (max-width: 739px) {
@@ -14,18 +18,20 @@
 
 @media (max-width: 580px) {
   .profile__symbol {
-    padding: 14px 125px;
-    margin: 38px auto;
+    padding: 10px 138px;
+    margin: 36px auto 0;
+    width: 16px;
+    min-height: 16px;
   }
 }
 
 @media (max-width: 275px) {
   .profile__symbol {
     padding: 10px 95px;
-    margin: 38px auto;
   }
 }
 
 .profile__symbol:hover {
   opacity: 0.6;
+  cursor: pointer;
 }

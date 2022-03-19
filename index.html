@@ -11,106 +11,111 @@
 
 <body class="body">
   <div class="page">
-    <section class="header">
+    <header class="header">
       <img src="images/logo.svg" alt="логотип сервиса Место" class="header__logo">
-    </section>
-    <section class="profile">
-      <div class="profile__left">
-        <img src="images/image.jpg" alt="Фотогарфия Жак-Ив Кусто" class="profile__avatar">
+    </header>
+
+    <main class="main">
+
+      <section class="profile">
         <div class="profile__info">
+          <img src="images/image.jpg" alt="Фотогарфия Жак-Ив Кусто" class="profile__avatar">
           <div class="profile__text">
             <div class="profile__name">
-              <h2 class="profile__title">Жак-Ив Кусто</h2>
-              <img src="images/EditButton.svg" alt="" class="profile__edit-button">
+              <h1 class="profile__title">Жак-Ив Кусто</h1>
+              <button class="profile__edit-button"></button>
             </div>
-            <h3 class="profile__description">Исследователь океана</h3>
+            <p class="profile__description">Исследователь океана</p>
           </div>
         </div>
-      </div>
-      <img src="images/plus.svg" alt="" class="profile__symbol">
-    </section>
-    <section class="elements">
+        <button class="profile__symbol"></button>
+      </section>
 
-      <div class="elements__blocks">
+      <section class="elements">
 
-        <div class="elements__item">
-          <img src="images/karacharevo.png" alt="" class="elements__image">
+      <ul class="elements__list">
+
+        <li class="elements__item">
+          <img src="images/karacharevo.png" alt="Вид на Карачарево" class="elements__image">
           <div class="elements__rectangle">
             <div class="elements__title-text">
-              <h2 class="elements__title">Карачаевск</h2>
-              <img src="images/titile-heart.svg" alt="" class="elements__title-symbol">
+              <h2 class="elements__title">Карачаевск Карачаевск</h2>
+              <button class="elements__like"></button>
             </div>
           </div>
-        </div>
+        </li>
 
-        <div class="elements__item">
-          <img src="images/Elbrus.png" alt="" class="elements__image">
-          <div class="elements__rectangle">
-            <div class="elements__title-text">
-              <h2 class="elements__title">Гора Эльбрус</h2>
-              <img src="images/titile-heart.svg" alt="" class="elements__title-symbol">
-            </div>
-          </div>
-        </div>
-
-        <div class="elements__item">
-          <img src="images/dombai.png" alt="" class="elements__image">
-          <div class="elements__rectangle">
-            <div class="elements__title-text">
-              <h2 class="elements__title">Домбай</h2>
-              <img src="images/titile-heart.svg" alt="" class="elements__title-symbol">
-            </div>
-          </div>
-        </div>
-
-        <div class="elements__item">
-          <img src="images/Elbrus.png" alt="" class="elements__image">
+        <li class="elements__item">
+          <img src="images/Elbrus.png" alt="Вид на Эльбрус" class="elements__image">
           <div class="elements__rectangle">
             <div class="elements__title-text">
               <h2 class="elements__title">Гора Эльбрус</h2>
-              <img src="images/titile-heart.svg" alt="" class="elements__title-symbol">
+              <button class="elements__like"></button>
             </div>
           </div>
-        </div>
+        </li>
 
-        <div class="elements__item">
-          <img src="images/dombai.png" alt="" class="elements__image">
+        <li class="elements__item">
+          <img src="images/dombai.png" alt="Вид на Домбай" class="elements__image">
           <div class="elements__rectangle">
             <div class="elements__title-text">
               <h2 class="elements__title">Домбай</h2>
-              <img src="images/titile-heart.svg" alt="" class="elements__title-symbol">
+              <button class="elements__like"></button>
             </div>
           </div>
-        </div>
+        </li>
 
-        <div class="elements__item">
-          <img src="images/karacharevo.png" alt="" class="elements__image">
+        <li class="elements__item">
+          <img src="images/Elbrus.png" alt="Вид заката Эльбруса" class="elements__image">
+          <div class="elements__rectangle">
+            <div class="elements__title-text">
+              <h2 class="elements__title">Гора Эльбрус</h2>
+              <button class="elements__like"></button>
+            </div>
+          </div>
+        </li>
+
+        <li class="elements__item">
+          <img src="images/dombai.png" alt="Вид туманого Домбайя" class="elements__image">
+          <div class="elements__rectangle">
+            <div class="elements__title-text">
+              <h2 class="elements__title">Домбай</h2>
+              <button class="elements__like"></button>
+            </div>
+          </div>
+        </li>
+
+        <li class="elements__item">
+          <img src="images/karacharevo.png" alt="Туманы в Карачарево" class="elements__image">
           <div class="elements__rectangle">
             <div class="elements__title-text">
               <h2 class="elements__title">Карачаевск</h2>
-              <img src="images/titile-heart.svg" alt="" class="elements__title-symbol">
+              <button class="elements__like"></button>
             </div>
           </div>
-        </div>
+        </li>
 
+      </ul>
+
+      </section>
+
+      <div class="popup">
+        <div class="popup__container">
+          <h3 class="popup__title">Редактировать профиль</h3>
+          <form name="edit-form" class="popup__form">
+            <div class="popup__close-button"></div>
+            <input name="name" type="text" class="popup__text" placeholder="Жак-Ив Кусто">
+            <input name="job" type="text" class="popup__text" placeholder="Исследователь океана">
+            <input type="submit" class="popup__submit" value="Сохранить">
+          </form>
+        </div>
       </div>
-    </section>
+
+    </main>
 
     <footer class="footer">
       <p class="footer__copyright">&copy; 2022. Юрий Федотов</p>
     </footer>
-
-    <div class="popup">
-      <div class="popup__container">
-        <h3 class="popup__title">Редактировать профиль</h3>
-        <form class="popup__form">
-          <div class="popup__close-button"></div>
-          <input type="text" class="popup__text">
-          <input type="text" class="popup__job">
-          <input type="submit" class="popup__submit" value="Сохранить">
-        </form>
-      </div>
-    </div>
 
   </div>
   <script src="scripts/script.js"></script>
