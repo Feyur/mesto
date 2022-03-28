@@ -1,0 +1,6 @@
+@media (max-width: 920px) {
+    .main {
+        display: block;
+        padding: 0 10px;
+    }
+}
