@@ -31,59 +31,22 @@
         <button type="button" class="profile__add-button"></button>
       </section>
 
+      <ul class="elements__list">
+
+      </ul>
+
       <section class="elements">
 
-        <ul class="elements__list">
-
+        <template id="elements__list-template">
           <li class="elements__item">
             <img src="images/karacharevo.png" alt="Вид на Карачарево" class="elements__image">
+            <button type="button" class="elements__delete"></button>
             <div class="elements__title-text">
               <h2 class="elements__title">Карачаевск Карачаевск</h2>
               <button type="button" class="elements__like"></button>
             </div>
           </li>
-
-          <li class="elements__item">
-            <img src="images/Elbrus.png" alt="Вид на Эльбрус" class="elements__image">
-            <div class="elements__title-text">
-              <h2 class="elements__title">Гора Эльбрус</h2>
-              <button type="button" class="elements__like"></button>
-            </div>
-          </li>
-
-          <li class="elements__item">
-            <img src="images/dombai.png" alt="Вид на Домбай" class="elements__image">
-            <div class="elements__title-text">
-              <h2 class="elements__title">Домбай</h2>
-              <button type="button" class="elements__like"></button>
-            </div>
-          </li>
-
-          <li class="elements__item">
-            <img src="images/Elbrus.png" alt="Вид заката Эльбруса" class="elements__image">
-            <div class="elements__title-text">
-              <h2 class="elements__title">Гора Эльбрус</h2>
-              <button type="button" class="elements__like"></button>
-            </div>
-          </li>
-
-          <li class="elements__item">
-            <img src="images/dombai.png" alt="Вид туманого Домбайя" class="elements__image">
-            <div class="elements__title-text">
-              <h2 class="elements__title">Домбай</h2>
-              <button type="button" class="elements__like"></button>
-            </div>
-          </li>
-
-          <li class="elements__item">
-            <img src="images/karacharevo.png" alt="Туманы в Карачарево" class="elements__image">
-            <div class="elements__title-text">
-              <h2 class="elements__title">Карачаевск</h2>
-              <button type="button" class="elements__like"></button>
-            </div>
-          </li>
-
-        </ul>
+        </template>
 
       </section>
 
@@ -103,6 +66,28 @@
           <button type="submit" class="popup__submit">Сохранить</button>
         </form>
       </div>
+    </div>
+
+    <div class="popup" id="add-popup">
+      <div class="popup__container">
+        <button id="close-button" type="button" class="popup__close-button"></button>
+        <h3 class="popup__title">Новое место</h3>
+        <form name="add-form" class="popup__form">
+          <input name="place" type="text" class="popup__text" placeholder="Название">
+          <input name="link" type="text" class="popup__text" placeholder="Ссылка на кратинку">
+          <button type="submit" class="popup__submit">Создать</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="popup popup__background" id="zoom-image">
+
+      <figure class="popup__figure">
+        <img src="images/karacharevo.png" alt="Вид на Карачарево" class="popup__image">
+        <figcaption class="popup__figcaption">Вид на Карачарево</figcaption>
+      <button id="close-figabutton" type="button" class="popup__close-button"></button>
+      </figure>
+
     </div>
 
   </div>

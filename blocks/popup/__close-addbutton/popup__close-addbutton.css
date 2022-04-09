@@ -1,0 +1,43 @@
+.popup__close-addbutton {
+  position: absolute;
+  border: none;
+  top: 0;
+  right: 0;
+  width: 32px;
+  height: 32px;
+  transform: translate(133% , -138%);
+  background: none;
+  outline: none;
+}
+
+.popup__close-addbutton:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.popup__close-addbutton:before, .popup__close-addbutton:after {
+  position: absolute;
+  content: '';
+  height: 41px;
+  width: 4px;
+  background: white;
+  top: 0;
+}
+
+ .popup__close-addbutton:before {
+  transform: translateX(-100%) rotate(45deg);
+}
+
+.popup__close-addbutton:after {
+  transform: translateX(-100%) rotate(-45deg);
+} 
+
+@media (max-width: 580px) {
+  .popup__close-addbutton {
+    transform: translate(21% , -120%);
+  }
+  .popup__close-addbutton:before, .popup__close-button:after {
+    height: 25px;
+    width: 2.5px;
+  }
+}
