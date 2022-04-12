@@ -12,7 +12,7 @@ const profileDescription = document.querySelector('.profile__description');
 
 const popupAdd = document.querySelector('.popup_content_place-add');
 const buttonAddOpen = document.querySelector('.profile__add-button');
-const buttonAddClose = document.querySelector('.popup_close_addbutton');
+const buttonAddClose = document.querySelector('.popup__button_close_place');
 const placeInput = document.querySelector('.popup__text_place');
 const linkInput = document.querySelector('.popup__text_link');
 const formAdd = document.querySelector('.popup__add-form');
@@ -22,7 +22,7 @@ const formAdd = document.querySelector('.popup__add-form');
 const popupZoom = document.querySelector('.popup_content_image');
 const popupImg = document.querySelector('.popup__image');
 const popupFig = document.querySelector('.popup__figcaption');
-const buttonFigCLose = document.querySelector('.popup_close_figabutton')
+const buttonFigCLose = document.querySelector('.popup__button_close_figure')
 
 
 // вывод списка
