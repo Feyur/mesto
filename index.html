@@ -39,16 +39,7 @@
 
       </ul>
 
-        <template id="elements__list-template">
-          <li class="elements__item">
-            <img src="images/karacharevo.png" alt="Вид на Карачарево" class="elements__image">
-            <button type="button" class="elements__delete"></button>
-            <div class="elements__title-text">
-              <h2 class="elements__title">Карачаевск Карачаевск</h2>
-              <button type="button" class="elements__like"></button>
-            </div>
-          </li>
-        </template>
+      
 
       </section>
 
@@ -58,42 +49,56 @@
       <p class="footer__copyright">&copy; 2022. Юрий Федотов</p>
     </footer>
 
-    <div class="popup">
+    <div class="popup popup_content_profile-edit">
       <div class="popup__container">
         <button type="button" class="popup__close-button"></button>
         <h3 class="popup__title">Редактировать профиль</h3>
         <form name="edit-form" class="popup__form">
-          <input name="name" type="text" class="popup__text" placeholder="Жак-Ив Кусто">
-          <input name="job" type="text" class="popup__text" placeholder="Исследователь океана">
+          <input name="name" type="text" class="popup__text popup__text_name" placeholder="Жак-Ив Кусто">
+          <input name="job" type="text" class="popup__text popup__text_job" placeholder="Исследователь океана">
           <button type="submit" class="popup__submit">Сохранить</button>
         </form>
       </div>
     </div>
 
-    <div class="popup" id="add-popup">
+    <div class="popup popup_content_place-add">
       <div class="popup__container">
-        <button id="close-button" type="button" class="popup__close-button"></button>
+        <button id="close-button" type="button" class="popup__close-button popup_close_add-button"></button>
         <h3 class="popup__title">Новое место</h3>
-        <form name="add-form" class="popup__form">
-          <input name="place" type="text" class="popup__text" placeholder="Название">
-          <input name="link" type="text" class="popup__text" placeholder="Ссылка на кратинку">
+        <form name="add-form" class="popup__form popup__add-form">
+          <input name="place" type="text" class="popup__text popup__text_place" placeholder="Название">
+          <input name="link" type="text" class="popup__text popup__text_link" placeholder="Ссылка на кратинку">
           <button type="submit" class="popup__submit">Создать</button>
         </form>
       </div>
     </div>
 
-    <div class="popup popup_background" id="zoom-image">
+    <div class="popup popup_content_image">
 
       <figure class="popup__figure">
         <img src="images/karacharevo.png" alt="Вид на Карачарево" class="popup__image">
         <figcaption class="popup__figcaption">Вид на Карачарево</figcaption>
-      <button id="close-figabutton" type="button" class="popup__close-button"></button>
+      <button id="close-figabutton" type="button" class="popup__close-button popup_close_figa-button"></button>
       </figure>
 
     </div>
 
   </div>
+  
+        <template id="elements__item-template">
+          <li class="elements__item">
+            <img src="images/karacharevo.png" alt="Вид на Карачарево" class="elements__image">
+            <button type="button" class="elements__delete"></button>
+            <div class="elements__title-text">
+              <h2 class="elements__title">Карачаевск Карачаевск</h2>
+              <button type="button" class="elements__like"></button>
+            </div>
+          </li>
+        </template>
+  
+  <script src="scripts/cards.js"></script>
   <script src="scripts/script.js"></script>
+
 </body>
 
 </html>
