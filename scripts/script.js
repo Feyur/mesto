@@ -24,6 +24,8 @@ const popupImg = document.querySelector('.popup__image');
 const popupFig = document.querySelector('.popup__figcaption');
 const buttonFigCLose = document.querySelector('.popup__close-button_figure')
 
+// шаблон карточки
+const template = document.querySelector('#elements__item-template').content.querySelector('.elements__item');
 
 // вывод списка
 
@@ -37,27 +39,31 @@ function toggleLike(event) {
 function zoomImg(cardName, cardLink) {
   popupZoom.classList.add('popup_opened');
   popupImg.src = cardLink;
+  popupImg.alt = cardName;
   popupFig.textContent = cardName;
 }
 
 const createCard = (cardName, cardLink) => {
-  const template = document.querySelector('#elements__item-template');
-  const li = template.content.querySelector('.elements__item').cloneNode(true);
   
-  li.querySelector('.elements__image').src = cardLink;
-  li.querySelector('.elements__title').textContent = cardName;
+  const cardElement = template.cloneNode(true);
+  const cardImage = cardElement.querySelector('.elements__image');
+  
+  cardImage.src = cardLink;
+  cardImage.alt = cardName;
+  
+  cardElement.querySelector('.elements__title').textContent = cardName;
 
-  li.querySelector('.elements__like').addEventListener('click', toggleLike);
+  cardElement.querySelector('.elements__like').addEventListener('click', toggleLike);
   
-  li.querySelector('.elements__delete').addEventListener('click', (event) => {
-    li.remove()
+  cardElement.querySelector('.elements__delete').addEventListener('click', (event) => {
+    cardElement.remove()
   })
 
-  li.querySelector('.elements__image').addEventListener('click', () => {
+  cardImage.addEventListener('click', () => {
     zoomImg(cardName, cardLink);
   });
 
-  return li;
+  return cardElement;
 
 }
 
@@ -72,10 +78,6 @@ elementsList.append(...cards)
 
 function openPopup(popup) {
   popup.classList.add('popup_opened');
-  if (popup == popupProfile) {
-  nameInput.value = profileTitle.textContent;
-  jobInput.value = profileDescription.textContent;
-  }
 }
 
 function closePopup(popup) {
@@ -85,7 +87,9 @@ function closePopup(popup) {
 // форма edit button 
 
 buttonEditOpen.addEventListener('click', () => {
-	openPopup(popupProfile);
+  openPopup(popupProfile);
+  nameInput.value = profileTitle.textContent;
+  jobInput.value = profileDescription.textContent;
 });
 
 buttonEdtitClose.addEventListener('click', () => {
