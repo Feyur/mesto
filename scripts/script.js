@@ -87,9 +87,9 @@ function closePopup(popup) {
 // форма edit button 
 
 buttonEditOpen.addEventListener('click', () => {
-  openPopup(popupProfile);
   nameInput.value = profileTitle.textContent;
   jobInput.value = profileDescription.textContent;
+  openPopup(popupProfile);
 });
 
 buttonEdtitClose.addEventListener('click', () => {
