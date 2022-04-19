@@ -9,6 +9,7 @@
   <title>Mesto</title>
 </head>
 
+
 <body class="body">
   <div class="page">
     <header class="header">
@@ -53,10 +54,30 @@
       <div class="popup__container">
         <button type="button" class="popup__close-button"></button>
         <h3 class="popup__title">Редактировать профиль</h3>
-        <form name="edit-form" class="popup__form">
-          <input name="name" type="text" class="popup__text popup__text_name" placeholder="Жак-Ив Кусто">
-          <input name="job" type="text" class="popup__text popup__text_job" placeholder="Исследователь океана">
-          <button type="submit" class="popup__submit">Сохранить</button>
+        <form name="edit-form" class="popup__form" id="editform">
+          <input 
+		  name="name" 
+		  type="text" 
+		  class="popup__text popup__text_name form__input" 
+		  required 
+		  minlength="2"
+		  maxlength="40"
+		  placeholder="Жак-Ив Кусто" 
+		  id="name-profile"
+		  >
+		  <span id="name-profile-error" class="popup__error"></span>
+          <input 
+		  name="job" 
+		  type="text"
+		  class="popup__text popup__text_job" 
+		  required 
+		  minlength="2"
+		  maxlength="200"
+		  placeholder="Исследователь океана" 
+		  id="job-profile"
+		  >
+		  <span id="job-profile-error" class="popup__error"></span>
+          <button type="submit" class="button popup__submit">Сохранить</button>
         </form>
       </div>
     </div>
@@ -65,10 +86,34 @@
       <div class="popup__container">
         <button id="close-button" type="button" class="popup__close-button popup__close-button_place"></button>
         <h3 class="popup__title">Новое место</h3>
-        <form name="add-form" class="popup__form popup__add-form">
-          <input name="place" type="text" class="popup__text popup__text_place" placeholder="Название">
-          <input name="link" type="text" class="popup__text popup__text_link" placeholder="Ссылка на кратинку">
-          <button type="submit" class="popup__submit">Создать</button>
+		<!-- добавлен атрибут формы novalidate, чтобы предотвратить стандартную валидациюю формы -->
+        <form name="add-form" class="popup__form popup__add-form" novalidate>
+          <input 
+		  name="place" 
+		  type="text" 
+		  class="popup__text popup__text_place"
+		  id="name-card"
+		  placeholder="Название"
+		  minlength="2"
+		  maxlength="30"
+		  required
+		  >
+		  <!-- Изначально пустой span. В него будет помещаться текст ошибки. -->
+           <span id="name-card-error" class="popup__error"></span>
+          <!-- Тип инпута изменен на url-->
+          <input 
+		  name="link" 
+		  type="url" 
+		  id="link-card"
+		  class="popup__text popup__text_link"
+		  placeholder="Ссылка на картинка"
+		  minlength="2"
+		  required
+		  >
+		  <!-- Изначально пустой span. В него будет помещаться текст ошибки. -->
+          <span id="link-card-error" class="popup__error"></span>
+		  <!-- кнопке submit добавлен класс button -->
+          <button type="submit" class="button popup__submit">Создать</button>
         </form>
       </div>
     </div>
@@ -98,6 +143,7 @@
   
   <script src="scripts/cards.js"></script>
   <script src="scripts/script.js"></script>
+  <script src="scripts/forms.js"></script>
 
 </body>
 

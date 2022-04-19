@@ -31,6 +31,18 @@ const template = document.querySelector('#elements__item-template').content.quer
 
 const elementsList = document.querySelector('.elements__list')
 
+// Работа с формой
+
+// const formError = form.querySelector(`.${formInput.id}-error`);
+
+// const showInputError = (formElement, inputElement, errorMessage) => {
+//   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
+//   inputElement.classList.add('form__input_type_error');
+//   errorElement.textContent = errorMessage;
+//   errorElement.classList.add('form__input-error_active');
+// };
+
+
 
 function toggleLike(event) {
   event.target.classList.toggle('elements__like_active');
@@ -84,6 +96,28 @@ function closePopup(popup) {
   popup.classList.remove('popup_opened');
 }
 
+// Cобытие закрытие popup'ов по клавие escape и клике на экран
+
+function keyHandler(evt) {
+  if (evt.key === "Escape") {
+    closeAllPopups() 
+  }
+}
+
+document.addEventListener('keydown', keyHandler);
+
+document.addEventListener("click", function(evt){
+  if (evt.target.classList.contains('popup_opened')) {
+      closeAllPopups();
+  }
+});
+
+function closeAllPopups() {
+  closePopup(popupProfile);
+  closePopup(popupAdd);
+  closePopup(popupZoom);
+}
+
 // форма edit button 
 
 buttonEditOpen.addEventListener('click', () => {
@@ -92,9 +126,11 @@ buttonEditOpen.addEventListener('click', () => {
   openPopup(popupProfile);
 });
 
+
 buttonEdtitClose.addEventListener('click', () => {
 	closePopup(popupProfile);
 });
+
 
 function formSubmitHandler(evt) {
   evt.preventDefault();
@@ -133,3 +169,5 @@ formAdd.addEventListener('submit', formSubmitNewCard);
 buttonFigCLose.addEventListener('click', () => {
 	closePopup(popupZoom);
 });
+
+
