@@ -86,7 +86,6 @@
       <div class="popup__container">
         <button id="close-button" type="button" class="popup__close-button popup__close-button_place"></button>
         <h3 class="popup__title">Новое место</h3>
-		<!-- добавлен атрибут формы novalidate, чтобы предотвратить стандартную валидациюю формы -->
         <form name="add-form" class="popup__form popup__add-form" novalidate>
           <input 
 		  name="place" 
@@ -98,9 +97,7 @@
 		  maxlength="30"
 		  required
 		  >
-		  <!-- Изначально пустой span. В него будет помещаться текст ошибки. -->
            <span id="name-card-error" class="popup__error"></span>
-          <!-- Тип инпута изменен на url-->
           <input 
 		  name="link" 
 		  type="url" 
@@ -110,9 +107,7 @@
 		  minlength="2"
 		  required
 		  >
-		  <!-- Изначально пустой span. В него будет помещаться текст ошибки. -->
           <span id="link-card-error" class="popup__error"></span>
-		  <!-- кнопке submit добавлен класс button -->
           <button type="submit" class="button popup__submit">Создать</button>
         </form>
       </div>
