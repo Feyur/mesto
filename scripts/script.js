@@ -1,12 +1,14 @@
 const buttonEditOpen = document.querySelector('.profile__edit-button');
 const buttonEdtitClose = document.querySelector('.popup__close-button');
 const popupProfile = document.querySelector('.popup_content_profile-edit');
-const form = document.querySelector('.popup__form');
+const formEditProfile = document.querySelector('.popup__form');
 const formElement = document.querySelector('.popup__submit');
 const nameInput = document.querySelector('.popup__text_name');
 const jobInput = document.querySelector('.popup__text_job');
 const profileTitle = document.querySelector('.profile__title');
 const profileDescription = document.querySelector('.profile__description');
+const profileSubmitButton = document.querySelector('.popup__submit_profile');
+const placeSubmitButton = document.querySelector('.popup__submit_place');
 
 // popup добавление карточки
 
@@ -29,30 +31,19 @@ const template = document.querySelector('#elements__item-template').content.quer
 
 // вывод списка
 
-const elementsList = document.querySelector('.elements__list')
+const cardsContainer = document.querySelector('.elements__list')
 
 // Работа с формой
-
-// const formError = form.querySelector(`.${formInput.id}-error`);
-
-// const showInputError = (formElement, inputElement, errorMessage) => {
-//   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
-//   inputElement.classList.add('form__input_type_error');
-//   errorElement.textContent = errorMessage;
-//   errorElement.classList.add('form__input-error_active');
-// };
-
-
 
 function toggleLike(event) {
   event.target.classList.toggle('elements__like_active');
 }
 
 function zoomImg(cardName, cardLink) {
-  popupZoom.classList.add('popup_opened');
   popupImg.src = cardLink;
   popupImg.alt = cardName;
   popupFig.textContent = cardName;
+  openPopup(popupZoom);
 }
 
 const createCard = (cardName, cardLink) => {
@@ -84,38 +75,31 @@ const cards = initialCards.map(function (card) {
   return createCard(card.name, card.link);
 });
 
-elementsList.append(...cards)
+cardsContainer.append(...cards)
 
 // Открытие и закрытие popup'ов 
 
 function openPopup(popup) {
   popup.classList.add('popup_opened');
+  document.addEventListener('keydown', closeByEsc);
+  popup.addEventListener('click', closeByOverlayClick);
 }
 
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
+  document.removeEventListener('keydown', closeByEsc);
+  popup.removeEventListener('click', closeByOverlayClick);
 }
 
-// Cобытие закрытие popup'ов по клавие escape и клике на экран
+function closeByEsc(evt) {
+    if (evt.key === 'Escape') {
+      const openedPopup = document.querySelector('.popup_opened');
+      closePopup(openedPopup); 
+    }
+}  
 
-function keyHandler(evt) {
-  if (evt.key === "Escape") {
-    closeAllPopups() 
-  }
-}
-
-document.addEventListener('keydown', keyHandler);
-
-document.addEventListener("click", function(evt){
-  if (evt.target.classList.contains('popup_opened')) {
-      closeAllPopups();
-  }
-});
-
-function closeAllPopups() {
-  closePopup(popupProfile);
-  closePopup(popupAdd);
-  closePopup(popupZoom);
+function closeByOverlayClick(evt) {
+    closePopup(evt.target);
 }
 
 // форма edit button 
@@ -123,6 +107,8 @@ function closeAllPopups() {
 buttonEditOpen.addEventListener('click', () => {
   nameInput.value = profileTitle.textContent;
   jobInput.value = profileDescription.textContent;
+  resetFormValidation(formEditProfile, settings);
+  enableSubmitButton(profileSubmitButton, settings);
   openPopup(popupProfile);
 });
 
@@ -139,7 +125,7 @@ function formSubmitHandler(evt) {
   closePopup(popupProfile);
 }
 
-form.addEventListener('submit', formSubmitHandler);
+formEditProfile.addEventListener('submit', formSubmitHandler);
 
 // форма add button 
 
@@ -154,12 +140,14 @@ buttonAddClose.addEventListener('click', () => {
 
 function formSubmitNewCard(evt) {
   evt.preventDefault();
+  closePopup(popupAdd);
   const cardName = placeInput.value;
   const cardLink = linkInput.value;
-  elementsList.prepend(createCard(cardName, cardLink));
+  cardsContainer.prepend(createCard(cardName, cardLink));
   placeInput.value = '';
   linkInput.value = '';
-  closePopup(popupAdd);
+  placeSubmitButton.classList.add(settings.submitButtonInactiveClass);
+  
 }
 
 formAdd.addEventListener('submit', formSubmitNewCard);
