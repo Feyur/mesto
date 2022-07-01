@@ -1,0 +1,10 @@
+.profile__text {
+  margin-top: 22px;
+}
+
+@media (max-width: 580px) {
+  .profile__text {
+    margin-top: 0;
+    padding: 0 30px;
+  }
+}

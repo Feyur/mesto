@@ -1,9 +1,9 @@
 export default class Card {
-  constructor(cardName, cardLink, templateSelector, zoomFunction) {
+  constructor(cardName, cardLink, templateSelector, handleCardClick) {
     this._name = cardName;
     this._link = cardLink;
     this._templateSelector = templateSelector;
-    this._zoomFunction = zoomFunction;
+    this._handleCardClick = handleCardClick;
   }
 
   _setEventListeners() {
@@ -15,7 +15,7 @@ export default class Card {
       .addEventListener("click", () => this._onDelete());
     this._card
       .querySelector(".elements__image")
-      .addEventListener("click", (event) => this._zoomFunction(event));
+      .addEventListener("click", (event) => this._handleCardClick(event));
   }
 
   _onLike() {
