@@ -44,13 +44,13 @@ const createCard = (cardName, cardLink) => {
     cardLink,
     templateSelector,
     handleCardClick
-  ).getCard();
-  return card;
+  );
+  return card.getCard();
 };
 
-const renderCard = (cardName, cardLink, cardContainer) => {
+const renderCard = (cardName, cardLink) => {
   const card = createCard(cardName, cardLink);
-  cardContainer.prepend(card);
+  sectionCards.addItem(card);
 };
 
 // открытие формы редактирования профиля
@@ -59,16 +59,16 @@ buttonEditOpen.addEventListener("click", () => {
   const { title, job } = userInfo.getUserInfo();
   nameInput.value = title;
   jobInput.value = job;
-  editProfileValidator.resetFormValidation(formEditProfile);
-  editProfileValidator.enableSubmitButton();
-  editProfilePopup.open();
+  profileValidator.resetFormValidation(formEditProfile);
+  profileValidator.enableSubmitButton();
+  profileEditPopup.open();
 });
 
 // открытие формы добавления карточки
 
 buttonAddOpen.addEventListener("click", () => {
-  addPlaceValidator.resetFormValidation(formAdd);
-  addPlacePopup.open();
+  placeValidator.resetFormValidation(formAdd);
+  placeAddPopup.open();
 });
 
 //обработчик отправки формы профиля
@@ -76,30 +76,30 @@ buttonAddOpen.addEventListener("click", () => {
 function formSubmitProfile(data) {
   const { name, job } = data;
   userInfo.setUserInfo(name, job);
-  editProfilePopup.close();
+  profileEditPopup.close();
 }
 
 // обработчик отправки формы карточки
 
-const formSubmitNewCard = (data) => {
+const submitNewCard = (data) => {
   const cardName = data.place;
   const cardLink = data.link;
-  addPlacePopup.close();
+  placeAddPopup.close();
   const card = createCard(cardName, cardLink);
   sectionCards.addItem(card);
-  addPlaceValidator.disableSubmitButton();
+  placeValidator.disableSubmitButton();
 };
 
 // валидация форм
 
-const editProfileValidator = new FormValidator(
+const profileValidator = new FormValidator(
   validationSettings,
   formEditProfile
 );
-editProfileValidator.enableValidation();
+profileValidator.enableValidation();
 
-const addPlaceValidator = new FormValidator(validationSettings, formAdd);
-addPlaceValidator.enableValidation();
+const placeValidator = new FormValidator(validationSettings, formAdd);
+placeValidator.enableValidation();
 
 // секция с карточками
 
@@ -114,17 +114,17 @@ sectionCards.renderItems();
 const imagePopup = new PopupWithImage(".popup_content_image");
 imagePopup.setEventListeners();
 
-const editProfilePopup = new PopupWithForm(
+const profileEditPopup = new PopupWithForm(
   ".popup_content_profile-edit",
   formSubmitProfile
 );
-editProfilePopup.setEventListeners();
+profileEditPopup.setEventListeners();
 
-const addPlacePopup = new PopupWithForm(
+const placeAddPopup = new PopupWithForm(
   ".popup_content_place-add",
-  formSubmitNewCard
+  submitNewCard
 );
-addPlacePopup.setEventListeners();
+placeAddPopup.setEventListeners();
 
 const userInfo = new UserInfo({
   profileNameSelector: ".profile__title",

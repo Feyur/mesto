@@ -7,21 +7,17 @@ export default class Card {
   }
 
   _setEventListeners() {
-    this._card
-      .querySelector(".elements__like")
-      .addEventListener("click", () => this._onLike());
+    this._cardLike = this._card.querySelector(".elements__like");
+    this._cardLike.addEventListener("click", () => this._onLike());
     this._card
       .querySelector(".elements__delete")
       .addEventListener("click", () => this._onDelete());
-    this._card
-      .querySelector(".elements__image")
+    this._cardImage
       .addEventListener("click", (event) => this._handleCardClick(event));
   }
 
   _onLike() {
-    this._card
-      .querySelector(".elements__like")
-      .classList.toggle("elements__like_active");
+    this._cardLike.classList.toggle("elements__like_active");
   }
 
   _onDelete() {
